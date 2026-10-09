@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.ScreenshotButler" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/parchment</item>
+        <item name="android:statusBarColor">@color/parchment</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+
+    <color name="parchment">#FFF3EBD8</color>
+</resources>

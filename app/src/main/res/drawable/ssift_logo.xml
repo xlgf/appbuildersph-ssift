@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ssift mark, traced from the 1080 px brand master. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp" android:height="120dp"
+    android:viewportWidth="700" android:viewportHeight="700">
+    <path android:fillColor="@color/ssift_ink" android:pathData="M0,143 L143,0 L330,0 L329,198 L198,330 L0,330 Z"/>
+    <path android:fillColor="@color/ssift_ink" android:pathData="M370,0 L700,0 L700,331 L501,331 L369,198 Z"/>
+    <path android:fillColor="@color/ssift_ink" android:pathData="M0,370 L199,370 L329,500 L329,700 L0,700 Z"/>
+    <path android:fillColor="@color/ssift_ink" android:pathData="M369,500 L499,371 L700,371 L700,555 L555,700 L370,700 Z"/>
+    <path android:fillColor="@color/ssift_ink" android:pathData="M265,265 L435,265 L435,435 L265,435 Z"/>
+    <path android:fillColor="@color/ssift_paper" android:pathData="M371,267 L433,370 L329,433 L267,329 Z"/>
+    <path android:fillColor="@color/ssift_ink" android:pathData="M306,305 L394,305 L394,394 L306,394 Z"/>
+    <path android:fillColor="@color/ssift_paper" android:pathData="M361,306 L394,360 L339,394 L306,339 Z"/>
+    <path android:fillColor="@color/ssift_ink" android:pathData="M328,328 L372,328 L372,372 L328,372 Z"/>
+    <path android:fillColor="@color/ssift_paper" android:pathData="M355,329 L371,355 L345,371 L329,345 Z"/>
+    <path android:fillColor="@color/ssift_ink" android:pathData="M341,341 L359,341 L359,359 L341,359 Z"/>
+</vector>

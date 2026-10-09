@@ -1,0 +1,5 @@
+<resources>
+    <!-- ssift brand mark: black on white. -->
+    <color name="ssift_ink">#FF000000</color>
+    <color name="ssift_paper">#FFFFFFFF</color>
+</resources>

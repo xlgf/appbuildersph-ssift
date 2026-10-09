@@ -1,0 +1,31 @@
+schema: spec-driven
+
+context: |
+  Product: Screenshot Butler, an Android app that reads every screenshot on the phone with
+  on-device AI, sorts them into folders, answers questions about them, and flags screenshots that
+  expose private details. Built solo in a 20-hour "Local AI" hackathon; general-public audience.
+  Judging: problem/usefulness 25%, local AI implementation 25%, technical execution 20%,
+  innovation 15%, product/demo 15%.
+
+  Hard constraint: nothing leaves the device. The manifest removes INTERNET and
+  ACCESS_NETWORK_STATE; no feature may need the network after the model is installed.
+
+  Stack: Kotlin, Jetpack Compose (Material 3), minSdk 29, targetSdk 35, Android Studio.
+  On-device AI: MediaPipe LLM Inference 0.10.27 with Gemma 3 1B int4 (.task, ~555 MB, text-only);
+  ML Kit Text Recognition v2 and Image Labeling, both bundled. Room with an FTS4 index,
+  WorkManager for background work, Coil 3 for images. Package com.screenshotbutler.
+  Prompts are tuned on a laptop with Ollama (gemma3:1b) before going into ai/Prompts.kt.
+
+  Design (Stitch bento system, chosen 2026-10-10): sage background #CDD0C2, off-white rounded
+  cards (28dp), coral primary #D9694A, indigo secondary #5B5CE2, chartreuse tertiary #D3D96B,
+  Manrope (bundled) with light headlines and small coral labels, pill and round buttons.
+  Light-only for now. Plain language in the UI, no pseudo-technical labels or invented metrics.
+
+  Demo: 83 generated screenshots (tools/make-demo-screenshots.ps1), run live in airplane mode.
+
+rules:
+  tasks:
+    - Group tasks by hackathon milestone (setup, hour 4, 9, 11.5, 13, 17.5, 20)
+    - Each task is verifiable on the phone in under 30 minutes
+  proposal:
+    - Keep proposals under 500 words
