@@ -15,6 +15,9 @@ android {
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+        // `-Pabi=arm64-v8a` packages one CPU type only (the prebuilt APK for judges): the native ML libraries
+        // for all four types make a 210 MB APK. Normal builds keep every type so emulators still work.
+        (project.findProperty("abi") as String?)?.let { ndk { abiFilters += it } }
     }
 
     buildTypes {

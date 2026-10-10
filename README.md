@@ -69,7 +69,14 @@ None at runtime: no cloud AI APIs, backend, analytics or accounts. ML Kit uses i
 - **Claude Code** (Anthropic's Claude) was used throughout: writing and debugging the Kotlin code, tuning search and tagging against a real test set, writing scripts, the demo film and this README.
 - **Google Stitch** was used to design the screens.
 
-## Setup
+## Try it (no build needed)
+
+1. On an arm64 Android phone (Android 10+), install **ssift-arm64.apk** from the [Releases page](https://github.com/xlgf/appbuildersph-ssift/releases/latest).
+2. Get the model: download **Gemma 3 1B instruction-tuned, int4 `.task`** from `litert-community` on Hugging Face, then in ssift open **Settings → Import model file** (details in [The model](#the-model)).
+3. Optional demo data: run `tools/push-demo-screenshots.ps1` with the phone on USB and keep **Demo mode** on in Settings.
+4. Turn on airplane mode and ask: `wifi password at moms`, `where did I park`, `when is my concert`, `when is my flight to Tokyo`.
+
+## Setup (build from source)
 
 1. Install **Android Studio** (it bundles its own JDK, so the system Java version doesn't matter) with **Android SDK 35**.
 2. **File → Open** this `appbuildersph-ssift` folder. Let Gradle sync. If Studio offers to update the Android Gradle Plugin or library versions, accepting is fine.
@@ -90,16 +97,6 @@ The app expects a MediaPipe `.task` LLM named `model.task`.
 3. Relaunch the app. Home stops showing the model notice once it's loaded.
 
 If answers come back garbled, flip `WRAP_GEMMA_TEMPLATE` in `ai/Prompts.kt` (some `.task` bundles apply the chat template themselves).
-
-## Tune prompts on the laptop first
-
-Rebuilding the APK per prompt tweak is slow. Install Ollama and run the same model family:
-
-```
-ollama run gemma3:1b
-```
-
-Paste the instructions from `ai/Prompts.kt` plus real OCR text (copy it from a screenshot's *Show all text* view), iterate until answers are reliable, then copy the wording back.
 
 ## How it works
 
@@ -138,18 +135,6 @@ Paste the instructions from `ai/Prompts.kt` plus real OCR text (copy it from a s
 | "when is my library book due" | Library loan, Oct 21, 2026 |
 | "where did I park" | Parking screen: answers "Westfield Central, Level 3, Spot C14" |
 | "dog", "pizza", "beach", "cat" / Images folder (5) | Photo screenshots with almost no text, so on-device image labeling describes them. Real CC0 photos from Wikimedia Commons, see `tools/photos/SOURCES.md` |
-
-## Demo checklist
-
-- [ ] **Demo with the debug build** (`app-debug.apk`): Demo mode is on by default only in debug builds. A release build reads all of the presenter's screenshots.
-
-- [ ] Demo screenshots pushed (`tools/push-demo-screenshots.ps1`)
-- [ ] All indexed (Home shows the full count)
-- [ ] Digest finished: Settings → *Digest now (for testing) —*, wait until "Read by AI" equals the total
-- [ ] Model loaded before going on stage (open the app once; it loads at launch)
-- [ ] Airplane mode on; run the 3 demo questions 5 times
-- [ ] Backup video recorded
-- [ ] Mirror with `scrcpy`
 
 ## Known gaps
 
