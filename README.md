@@ -3,6 +3,8 @@
 **Ask your screenshots anything, offline.** ssift is an Android app that reads every screenshot on your phone with on-device AI. It sorts them into folders built from what you actually keep (chats, receipts, schedules, logins, games, memes). It answers questions like "what's the Wi‑Fi password at Mom's?" or "where did I park?" in a few seconds, and says "not sure" instead of guessing. It also flags screenshots that expose card numbers, passwords or ID numbers. The app has no internet permission, so nothing can leave the phone.
 
 Built for the AppBuilders PH hackathon, theme "Local AI".
+## Team Name and Members
+**Team Spica** - Xylgei Fuentespina
 
 ## What runs locally
 
